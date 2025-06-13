@@ -8,9 +8,9 @@ interface SearchInputProps {
 export default function SearchInput({ value, onChange }: SearchInputProps){
 
     return(
-        <input className="text-[#00ffbb] border-0 p-2 w-40 h-10 mr-18 font-medium"
+        <input className="text-[#00ffbb] border-0 p-4 w-34 h-10 mr-4  font-medium"
          type='search'
-         placeholder="Pesquisar anime"
+         placeholder="Pesquisar"
          value={value} 
          onChange={(e) => onChange(e.target.value)}/>
     )

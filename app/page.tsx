@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import SearchInput from './components/SearchInput/component';
+import './globals.css';
 
 type Anime = {
   id: string;
@@ -48,8 +49,8 @@ export default function Page() {
   return (
     <div>
       {/* Header */}
-      <div className="bg-[#051824] flex justify-between items-center p-7">
-        <div><button className='cursor-pointer p-4 ml-18 w-30'><h1 className="text-[#00ffbb] font-medium text-center">A N I M E S</h1></button></div>
+      <div className="bg-[#051824] flex justify-between items-center h-28">
+        <div><button className='cursor-pointer w-30'><h1 className="text-[#00ffbb] font-medium text-center">A N I M E S</h1></button></div>
         <div><SearchInput value={search} onChange={setSearch}/></div> 
       </div>
 
@@ -61,12 +62,12 @@ export default function Page() {
           <p className='text-[#00ffbb] pt-5'>Pesquise um Anime para classificar.</p>
         </div>
          : 
-        <div className='text-[#00ffbb]'>
+        <div className='text-[#00ffbb] font-medium w-[100%]'>
           {animeValue.data && (
-            <ul>
+            <ul className='animes-list'>
               {animeValue.data.map((anime) => (
                 <li key={anime.id}>
-                  <img src={anime.attributes.posterImage?.tiny} alt="" />
+                  <img src={anime.attributes.posterImage?.small} alt="" />
                   {anime.attributes.canonicalTitle}
                 </li>
               ))}
